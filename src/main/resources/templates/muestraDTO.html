@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Resultado</title>
+</head>
+<body>
+<h1>Resultado consulta DTO:</h1>
+<table>
+    <thead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    </thead>
+    <th:block th:each="estudiante, row: ${estudiantes}">
+        <tr>
+            <th th:text="${estudiante.nombre}"/>
+            <th th:text="${estudiante.apellido}"/>
+        </tr>
+    </th:block>
+</table>
+<form th:action="@{/estudiante}">
+    <input type="submit" value="Regresar">
+</form>
+</body>
+</html>
